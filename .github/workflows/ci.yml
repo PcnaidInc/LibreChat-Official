@@ -38,6 +38,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: npm run build:data-provider
+      - run: npm run build:client-package
       - run: npm run typecheck
         working-directory: client
 
@@ -51,6 +53,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: npm run build:data-provider
+      - run: npm run build:client-package
       - run: npm run test:client
 
   test-api:
@@ -63,6 +67,10 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: npm run build:data-provider
+      - run: npm run build:data-schemas
+      - run: npm run build:api
+      - run: npm run build:client-package
       - run: npm run test:api
 
   build:
