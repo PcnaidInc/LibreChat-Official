@@ -200,6 +200,16 @@ If you'd like to help translate LibreChat into your language, we'd love your con
 
 ---
 
+## CI
+
+The CI workflow (`.github/workflows/ci.yml`) runs on pull requests and pushes to `main`. It checks:
+
+- **Lint** — ESLint on all JS/TS/JSX/TSX files
+- **TypeCheck** — TypeScript type-checking (`tsc --noEmit`) for the client
+- **Test (client)** — Frontend unit tests (Jest)
+- **Test (api)** — Backend unit tests (Jest)
+- **Build (frontend CI)** — The CI-oriented frontend build (`frontend:ci`)
+
 ## 🎉 Special Thanks
 
 We thank [Locize](https://locize.com) for their translation management tools that support multiple languages in LibreChat.
